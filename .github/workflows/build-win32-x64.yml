@@ -69,7 +69,7 @@ jobs:
   win32-x64-build:
     name: 'win32-x64 openocd ${{github.event.inputs.version}} build'
     timeout-minutes: 2880 # 2 days
-    runs-on: [self-hosted, linux, x64, xbbliw]
+    runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
@@ -144,7 +144,7 @@ jobs:
 
   win32-x64-test:
     name: 'win32-x64 openocd ${{github.event.inputs.version}} test'
-    runs-on: windows-2022
+    runs-on: windows-latest
     needs: [win32-x64-build]
     defaults:
       run:
